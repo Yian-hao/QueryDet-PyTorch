@@ -112,7 +112,7 @@ QueryDet-PyTorch
 ```shell
 
 % train VisDrone QueryDet
-python train_visdrone.py --config-file configs/visdrone/querydet_train.pyaml --num-gpu 1 OUTPUT_DIR work_dirs/visdrone_querydet
+python train_visdrone.py --config-file configs/visdrone/querydet_train.yaml --num-gpu 1 OUTPUT_DIR work_dirs/visdrone_querydet
 
 
 下面不用管
