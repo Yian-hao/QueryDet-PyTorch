@@ -24,15 +24,23 @@ This repository is the official implementation of the paper: [QueryDet: Cascaded
 
 We tested the new QueryDet with CUDA 10.2 using NVIDIA 2080Ti GPUs. We provide a sample setting up script as following:
 
-```shell
-conda create -n querydet python=3.7 -y
-source activate querydet
-pip install torch==1.8.1+cu101 torchvision==0.9.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
-python -m pip install detectron2==0.4 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu102/torch1.7/index.html
-pip install spconv-cu102==2.1.25
+```
+conda create -n querydet python=3.8 -y
+activate querydet
 
-# Clone our repository and have fun with it! 
-git clone https://github.com/ChenhongyiYang/QueryDet-PyTorch.git
+pip install torch==1.10.0+cu113 torchvision==0.11.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+
+# Install Pre-Built Detectron2 (Linux only)
+python -m pip install detectron2 -f \
+  https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+
+# cv2
+cv2 pip install opencv-python
+
+# pip install spconv-cu102==2.1.25
+
+# Clone the repository and have fun with it! 
+git clone 
 
 # OPTIONAL: Install the python evaluation tool for VisDrone
 # Reference: https://github.com/tjiiv-cprg/visdrone-det-toolkit-python
