@@ -37,7 +37,8 @@ python -m pip install detectron2 -f \
 # cv2
 cv2 pip install opencv-python
 
-# pip install spconv-cu102==2.1.25
+# install spconv
+pip install spconv-cu113	
 
 # Clone the repository and have fun with it! 
 git clone https://github.com/Yian-hao/QueryDet-PyTorch.git
