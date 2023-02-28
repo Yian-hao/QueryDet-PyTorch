@@ -1,4 +1,4 @@
-# QueryDet-PyTorch
+# 基于ubantu的复现QueryDet-PyTorch
 
 <p align="center">
 <img src="assets/teaser.png" style="width:500px;"/>
