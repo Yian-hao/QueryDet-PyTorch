@@ -40,8 +40,9 @@ cv2 pip install opencv-python
 # pip install spconv-cu102==2.1.25
 
 # Clone the repository and have fun with it! 
-git clone 
+git clone https://github.com/Yian-hao/QueryDet-PyTorch.git
 
+下面这些可选的，先不用管，直接尝试训练
 # OPTIONAL: Install the python evaluation tool for VisDrone
 # Reference: https://github.com/tjiiv-cprg/visdrone-det-toolkit-python
 cd visdrone_eval
@@ -53,10 +54,6 @@ git clone https://github.com/sxhxliang/detectron2_backbone.git
 cd detectron2_backbone
 python setup.py build develop
 ```
-
-### COCO setting:
-
-You need to set up COCO following the [official tutorial](https://detectron2.readthedocs.io/en/latest/tutorials/builtin_datasets.html) of Detectron2.  
 
 ### VisDrone setting:
 
@@ -110,7 +107,25 @@ QueryDet-PyTorch
 
 -  After model training, you can evaluate your model by running `bash eval_visdrone.sh /path/to/visdrone_infer.json`.
 
+### Training
 
+```shell
+
+% train VisDrone QueryDet
+python train_visdrone.py --config-file configs/visdrone/querydet_train.pyaml --num-gpu 1 OUTPUT_DIR work_dirs/visdrone_querydet
+
+
+下面不用管
+% train coco RetinaNet baseline
+python train_coco.py --config-file configs/coco/retinanet_train.yaml --num-gpu 8 OUTPUT_DIR work_dirs/coco_retinanet
+
+% train coco QueryDet 
+python train_coco.py --config-file configs/coco/querydet_train.yaml --num-gpu 8 OUTPUT_DIR work_dirs/coco_querydet
+
+% train VisDrone RetinaNet baseline
+python train_visdrone.py --config-file configs/visdrone/retinanet_train.yaml --num-gpu 8 OUTPUT_DIR work_dirs/visdrone_retinanet
+
+```
 
 ## Usage
 
@@ -126,21 +141,12 @@ If you do not want you store your training results in other place, you can run `
 
 In the following we will assume you have created such a directory and introdce the training, testing, and evaluating commands. 
 
-### Training
+### COCO setting:
 
-```shell
-% train coco RetinaNet baseline
-python train_coco.py --config-file configs/coco/retinanet_train.yaml --num-gpu 8 OUTPUT_DIR work_dirs/coco_retinanet
+You need to set up COCO following the [official tutorial](https://detectron2.readthedocs.io/en/latest/tutorials/builtin_datasets.html) of Detectron2.  
 
-% train coco QueryDet 
-python train_coco.py --config-file configs/coco/querydet_train.yaml --num-gpu 8 OUTPUT_DIR work_dirs/coco_querydet
 
-% train VisDrone RetinaNet baseline
-python train_visdrone.py --config-file configs/visdrone/retinanet_train.yaml --num-gpu 8 OUTPUT_DIR work_dirs/visdrone_retinanet
 
-% train VisDrone QueryDet
-python train_visdrone.py --config-file configs/visdrone/querydet_train.pyaml --num-gpu 8 OUTPUT_DIR work_dirs/visdrone_querydet
-```
 
 ### Testing
 
