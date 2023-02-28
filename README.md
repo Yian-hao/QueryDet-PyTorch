@@ -1,23 +1,21 @@
-# 基于ubantu的复现QueryDet-PyTorch
+# 基于ubantu复现QueryDet-PyTorch
+成功开始训练
 
 <p align="center">
 <img src="assets/teaser.png" style="width:500px;"/>
 </p>
 
-This repository is the official implementation of our paper: [QueryDet: Cascaded Sparse Query for Accelerating High-Resolution Small Object Detection, *Chenhongyi Yang*, *Zehao Huang*, *Naiyan Wang*. CVPR 2022](https://arxiv.org/abs/2103.09136)
+This repository is the official implementation of the paper: [QueryDet: Cascaded Sparse Query for Accelerating High-Resolution Small Object Detection, *Chenhongyi Yang*, *Zehao Huang*, *Naiyan Wang*. CVPR 2022](https://arxiv.org/abs/2103.09136)
 
-
+在作者更新之后，去掉了APEX的加速包，
 
 ## IMPORTANT UPDATE !!! 
-
-We have updated the QueryDet repository to make it easier to use. Specifically:
-
+有如下更新：
 - QueryDet now supports newer versions of PyTorch and Detectron2. 
 - You do not need APEX any more. Now the FP16 training is through PyTorch AMP. 
 - QueryDet now supports Spconv 2.1, which can be directly installed using pip. 
 - We have improved the support for the VisDrone dataset.
 - We have reorganlzed the model configs to make them easier to use. 
-
 
 
 ## Setting:
